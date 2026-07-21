@@ -379,9 +379,9 @@
         <button class="chip" data-f="bi" aria-pressed="false">BI</button>
       </div>
       <div class="cards" id="cards">
-        <article class="card star" data-tags="ai cloud auto"><span class="flag">◆ <span data-i18n="w.flagship">Flagship</span></span><h3>Multi-agent AI triage</h3><p data-i18n="w.c1">A <b>production multi-agent AI system</b> that automates the triage and analysis of operational tickets — turning raw records into structured output (root cause, 5W2H, action plans). Three specialized agents (supervisor, collaborators, recurrence), orchestrated on <b>AWS serverless</b> and fed back into the operational workflow. I designed the AI architecture and led the handover to sustaining.</p><div class="tags"><span class="tag a">Multi-agent AI</span><span class="tag a">Claude</span><span class="tag">AWS Serverless</span><span class="tag">Automation</span></div></article>
+        <article class="card star" data-tags="ai cloud auto"><span class="flag">◆ <span data-i18n="w.flagship">Flagship</span></span><h3>Multi-agent AI triage</h3><p data-i18n="w.c1">A <b>production multi-agent AI system</b> that automates the triage and analysis of operational tickets — turning raw records into structured output (root cause, 5W2H, action plans). Three specialized agents (supervisor, collaborators, recurrence). Orchestrated on <b>AWS</b>: EventBridge → Lambda → Athena / Data Lake, integrated with Zendesk. I designed the AI architecture and led the handover to sustaining.</p><div class="tags"><span class="tag a">Multi-agent AI</span><span class="tag a">Claude</span><span class="tag">AWS Serverless</span><span class="tag">Automation</span></div></article>
         <article class="card" data-tags="bi ai auto"><span class="flag">Data · AI</span><h3>Power BI as an MCP server</h3><p data-i18n="w.c2">Exposed <b>Power BI</b> data as an <b>MCP server</b> so AI agents could consume live metrics — shipped as a team plugin. Plus sales dashboards (territories, forecast, renewals, ACV) with normalized indicators.</p><div class="tags"><span class="tag a">MCP</span><span class="tag">Power BI</span><span class="tag">Automation</span></div></article>
-        <article class="card" data-tags="ai auto"><span class="flag">Method</span><h3>Forge / AI-DLC</h3><p data-i18n="w.c3">Early adopter of <b>AI-driven software engineering</b> at SEK — the AI-DLC method with Forge, an internal assistant built on <b>Claude Code</b> (planning, code generation, tests, commits and deploys driven by AI) and <b>Claude Design</b> for the interface stage. A reference for this practice on the team. <i>AI-driven, not AI-assisted.</i></p><div class="tags"><span class="tag a">AI-DLC</span><span class="tag a">Claude Code</span><span class="tag a">Claude Design</span><span class="tag">Forge</span></div></article>
+        <article class="card" data-tags="ai auto"><span class="flag">Method</span><h3>Forge / AI-DLC</h3><p data-i18n="w.c3">Early adopter of <b>AI-driven software engineering</b> at SEK — the AI-DLC method with Forge — an internal <b>Claude plugin (custom skills &amp; sub-agents)</b> built on <b>Claude Code</b> that drives planning, code generation, tests, commits and deploys, plus <b>Claude Design</b> for the interface stage. A reference for this practice on the team. <i>AI-driven, not AI-assisted.</i></p><div class="tags"><span class="tag a">AI-DLC</span><span class="tag a">Claude Code</span><span class="tag a">Claude Design</span><span class="tag">Forge</span></div></article>
         <article class="card" data-tags="obs cloud auto"><span class="flag">Reliability</span><h3>Observability &amp; reliability</h3><p data-i18n="w.c4">Consolidated observability on <b>New Relic</b> and <b>CloudWatch</b> — dashboards, alerts and runbooks that keep AWS workloads reliable.</p><div class="tags"><span class="tag">New Relic</span><span class="tag">CloudWatch</span><span class="tag a">Runbooks</span></div></article>
         <article class="card" data-tags="cloud"><span class="flag">Architecture</span><h3>Serverless &amp; event-driven design</h3><p data-i18n="w.c5">End-to-end <b>AWS</b> serverless / event-driven architectures and cross-cloud integration (REST APIs exposed as MCP servers). Maintenance-first decisions — a single normalization layer to absorb a contract change instead of scattered fixes. Documented and handed over.</p><div class="tags"><span class="tag">Serverless</span><span class="tag">Event-driven</span><span class="tag">Cross-cloud</span></div></article>
         <article class="card" data-tags="product cloud"><span class="flag">Platform</span><h3>Platform migration &amp; UX</h3><p data-i18n="w.c6">Migrated an internal operations product to the company's next-generation platform. UI design and prototyping, process mapping, and per-country dry runs (Colombia, Chile, Brazil) before go-live.</p><div class="tags"><span class="tag">Vue / Pinia</span><span class="tag">UX / Mockups</span><span class="tag">Migration</span></div></article>
@@ -509,11 +509,12 @@
     <section id="skills">
       <div class="sec-head"><span class="sec-idx">04</span><h2 data-i18n="k.h">Technical spec</h2><span class="sec-sub" data-i18n="k.sub">Where I've shipped — highlights marked.</span></div>
       <div class="spec">
-        <div class="k">AI &amp; LLMs</div><div class="v"><span class="pill hot">Claude</span><span class="pill hot">Claude Code</span><span class="pill">Claude Design</span><span class="pill hot">Multi-agent architecture</span><span class="pill">Agent orchestration</span><span class="pill">Prompt engineering</span><span class="pill">RAG</span><span class="pill hot">AI-DLC / Forge</span><span class="pill hot">MCP</span></div>
+        <div class="k">AI &amp; LLMs</div><div class="v"><span class="pill hot">Claude</span><span class="pill hot">Claude Code</span><span class="pill">Claude Design</span><span class="pill hot">Multi-agent architecture</span><span class="pill">Agent orchestration</span><span class="pill">Prompt engineering</span><span class="pill">RAG</span><span class="pill hot">AI-DLC / Forge</span><span class="pill hot">Claude skills &amp; plugins</span><span class="pill hot">MCP servers</span></div>
         <div class="k" data-i18n="k.auto">Automation</div><div class="v"><span class="pill hot">AI-driven automation</span><span class="pill">Event-driven workflows</span><span class="pill">Power Automate</span><span class="pill">Ticket triage</span></div>
         <div class="k">AWS</div><div class="v"><span class="pill hot">Lambda</span><span class="pill hot">EventBridge</span><span class="pill">Step Functions</span><span class="pill">ECS / ECR</span><span class="pill">Athena</span><span class="pill">Data Lake</span><span class="pill">RDS</span><span class="pill">DynamoDB</span><span class="pill">SQS / SNS</span><span class="pill">CloudWatch</span></div>
         <div class="k" data-i18n="k.arch">Architecture</div><div class="v"><span class="pill hot">Serverless</span><span class="pill hot">Event-driven</span><span class="pill">Cross-cloud integration</span><span class="pill">Docs &amp; decisions</span></div>
         <div class="k">Azure</div><div class="v"><span class="pill">API Management</span><span class="pill">Static Web Apps</span><span class="pill">Entra ID</span><span class="pill">Power BI REST API</span></div>
+        <div class="k">Microsoft 365</div><div class="v"><span class="pill hot">SharePoint</span><span class="pill hot">Teams</span><span class="pill">Power Automate</span></div>
         <div class="k" data-i18n="k.obs">Observability</div><div class="v"><span class="pill">New Relic</span><span class="pill">CloudWatch</span><span class="pill">Runbooks</span></div>
         <div class="k">Frontend &amp; BI</div><div class="v"><span class="pill">Vue.js</span><span class="pill">Pinia</span><span class="pill">Power BI</span><span class="pill">DAX</span></div>
         <div class="k">Dev &amp; DevOps</div><div class="v"><span class="pill">Azure DevOps</span><span class="pill">Git</span><span class="pill">CI/CD</span><span class="pill">Node.js</span><span class="pill">Python</span></div>
@@ -643,13 +644,13 @@
     <h2>Core competencies</h2>
     <ul class="cv-skills">
       <li>Multi-agent AI systems — design, orchestration, HITL</li>
-      <li>LLM engineering — Claude, RAG, prompt engineering, MCP</li>
+      <li>LLM engineering — Claude, RAG, MCP servers, Claude skills &amp; plugins</li>
       <li>AWS serverless &amp; event-driven — Lambda, EventBridge, Step Functions</li>
       <li>Data &amp; analytics — Athena, Data Lake, Power BI, DAX</li>
       <li>AI-driven automation of operational workflows</li>
       <li>Observability — New Relic, CloudWatch, alerts &amp; runbooks</li>
       <li>Front-end — Vue.js, Pinia, TypeScript, design systems</li>
-      <li>Cross-cloud integration — Azure APIM, Entra ID</li>
+      <li>Cross-cloud &amp; Microsoft 365 — Azure APIM, Entra ID, SharePoint, Teams</li>
     </ul>
   </div>
   <div class="cv-sec">
@@ -658,7 +659,7 @@
       <div class="cv-job-h"><b>Software Engineer — AI &amp; Cloud</b><span>Mar 2023 — Present</span></div>
       <div class="cv-job-sub">SEK · Cybersecurity (LATAM) · Remote</div>
       <ul>
-        <li>Designed a production multi-agent AI system for operational ticket triage (supervisor, collaborators, recurrence agents), orchestrated on AWS serverless — turning raw records into structured output (root cause, action plans).</li>
+        <li>Designed a production multi-agent AI system for operational ticket triage (supervisor, collaborators, recurrence agents) on AWS: EventBridge → Lambda → Athena / Data Lake, integrated with Zendesk — turning raw records into structured output (root cause, action plans).</li>
         <li>Exposed Power BI data as an MCP server so AI agents could consume live metrics; built normalized sales dashboards (territory, forecast, renewals, ACV).</li>
         <li>Consolidated observability on New Relic and CloudWatch — dashboards, alerts and runbooks that keep AWS workloads reliable.</li>
         <li>Migrated an internal operations product to the company's next-generation platform — UI design/prototyping, process mapping and per-country dry runs.</li>
@@ -717,13 +718,13 @@
     <h2>Competências principais</h2>
     <ul class="cv-skills">
       <li>Sistemas de IA multiagente — design, orquestração, HITL</li>
-      <li>Engenharia de LLM — Claude, RAG, prompt engineering, MCP</li>
+      <li>Engenharia de LLM — Claude, RAG, MCP servers, skills &amp; plugins de Claude</li>
       <li>AWS serverless &amp; event-driven — Lambda, EventBridge, Step Functions</li>
       <li>Dados &amp; analytics — Athena, Data Lake, Power BI, DAX</li>
       <li>Automação de fluxos operacionais dirigida por IA</li>
       <li>Observabilidade — New Relic, CloudWatch, alertas &amp; runbooks</li>
       <li>Front-end — Vue.js, Pinia, TypeScript, design systems</li>
-      <li>Integração cross-cloud — Azure APIM, Entra ID</li>
+      <li>Cross-cloud &amp; Microsoft 365 — Azure APIM, Entra ID, SharePoint, Teams</li>
     </ul>
   </div>
   <div class="cv-sec">
@@ -732,7 +733,7 @@
       <div class="cv-job-h"><b>Engenheira de Software — IA &amp; Nuvem</b><span>mar 2023 — atual</span></div>
       <div class="cv-job-sub">SEK · Cibersegurança (LATAM) · Remoto</div>
       <ul>
-        <li>Projetei um sistema multiagente de IA em produção para triagem de tickets operacionais (supervisor, colaboradores, reincidência), orquestrado em AWS serverless — transformando registros crus em saída estruturada (causa-raiz, plano de ação).</li>
+        <li>Projetei um sistema multiagente de IA em produção para triagem de tickets operacionais (supervisor, colaboradores, reincidência) na AWS: EventBridge → Lambda → Athena / Data Lake, integrado ao Zendesk — transformando registros crus em saída estruturada (causa-raiz, plano de ação).</li>
         <li>Expus os dados do Power BI como servidor MCP para os agentes de IA consumirem métricas ao vivo; construí dashboards normalizados (território, forecast, renovações, ACV).</li>
         <li>Consolidei a observabilidade em New Relic e CloudWatch — dashboards, alertas e runbooks que mantêm as cargas na AWS confiáveis.</li>
         <li>Migrei um produto interno de operações para a nova geração da plataforma da empresa — design/prototipação de UI, mapeamento de processos e dry runs por país.</li>
@@ -798,9 +799,9 @@
     'a.t4b':'Early adopter de AI-DLC','a.t4s':'Engenharia dirigida por IA no fluxo real de trabalho.',
     'a.t5b':'Multicultural','a.t5s':'PT / EN / ES · times em cinco países da América Latina.',
     'w.h':'Trabalhos selecionados','w.sub':'IA em produção, automação e nuvem — filtre por área.','w.fall':'Todos','w.fauto':'Automação','w.flagship':'Destaque',
-    'w.c1':'Um <b>sistema multiagente de IA em produção</b> que automatiza a triagem e a análise de tickets operacionais — transformando registros crus em saída estruturada (causa-raiz, 5W2H, plano de ação). Três agentes especializados (supervisor, colaboradores, reincidência), orquestrado em <b>AWS serverless</b> e devolvido ao fluxo operacional. Projetei a arquitetura de IA e conduzi o repasse para a sustentação.',
+    'w.c1':'Um <b>sistema multiagente de IA em produção</b> que automatiza a triagem e a análise de tickets operacionais — transformando registros crus em saída estruturada (causa-raiz, 5W2H, plano de ação). Três agentes especializados (supervisor, colaboradores, reincidência). Orquestrado na <b>AWS</b>: EventBridge → Lambda → Athena / Data Lake, integrado ao Zendesk. Projetei a arquitetura de IA e conduzi o repasse para a sustentação.',
     'w.c2':'Expus os dados do <b>Power BI</b> como <b>servidor MCP</b> para os agentes de IA consumirem métricas ao vivo — distribuído como plugin do time. Mais dashboards de vendas (territórios, forecast, renovações, ACV) com indicadores normalizados.',
-    'w.c3':'Early adopter de <b>engenharia de software dirigida por IA</b> na SEK — o método AI-DLC com o Forge, um assistente interno construído sobre o <b>Claude Code</b> (planejamento, geração de código, testes, commits e deploys dirigidos por IA) e o <b>Claude Design</b> na etapa de interface. Referência dessa prática no time. <i>AI-driven, não AI-assisted.</i>',
+    'w.c3':'Early adopter de <b>engenharia de software dirigida por IA</b> na SEK — o método AI-DLC com o Forge — um <b>plugin interno de Claude (skills e sub-agentes próprios)</b> construído sobre o <b>Claude Code</b> que conduz planejamento, geração de código, testes, commits e deploys, além do <b>Claude Design</b> na etapa de interface. Referência dessa prática no time. <i>AI-driven, não AI-assisted.</i>',
     'w.c4':'Consolidei a observabilidade em <b>New Relic</b> e <b>CloudWatch</b> — dashboards, alertas e runbooks que mantêm as cargas na AWS confiáveis.',
     'w.c5':'Arquiteturas <b>AWS</b> serverless / event-driven de ponta a ponta e integração cross-cloud (REST APIs expostas como servidores MCP). Decisões orientadas à manutenção — uma camada única de normalização para absorver mudança de contrato em vez de ajustes espalhados. Documentado e repassado.',
     'w.c6':'Migração de um produto interno de operações para a nova geração da plataforma da empresa. Design e prototipação de UI, mapeamento de processos e dry runs por país (Colômbia, Chile, Brasil) antes do go-live.',
@@ -829,16 +830,16 @@
     'cv.sum':'Engenheira de IA &amp; Software com mais de 3 anos construindo sistemas de IA em produção e automação em nuvem de ponta a ponta — da arquitetura e back-ends serverless à orquestração de LLMs multiagente e à observabilidade que os mantém no ar. Não paro no diagnóstico da causa; gosto de resolver bem, com soluções otimizadas e de baixo custo que escalam. Referência técnica da camada de IA dos produtos internos da SEK, atuando em cinco países da América Latina em três idiomas.',
     'cv.h.skills':'Competências principais',
     'cv.sk1':'Sistemas de IA multiagente — design, orquestração, HITL',
-    'cv.sk2':'Engenharia de LLM — Claude, RAG, prompt engineering, MCP',
+    'cv.sk2':'Engenharia de LLM — Claude, RAG, MCP servers, skills &amp; plugins de Claude',
     'cv.sk3':'AWS serverless &amp; event-driven — Lambda, EventBridge, Step Functions',
     'cv.sk4':'Dados &amp; analytics — Athena, Data Lake, Power BI, DAX',
     'cv.sk5':'Automação de fluxos operacionais dirigida por IA',
     'cv.sk6':'Observabilidade — New Relic, CloudWatch, alertas &amp; runbooks',
     'cv.sk7':'Front-end — Vue.js, Pinia, TypeScript, design systems',
-    'cv.sk8':'Integração cross-cloud — Azure APIM, Entra ID',
+    'cv.sk8':'Cross-cloud &amp; Microsoft 365 — Azure APIM, Entra ID, SharePoint, Teams',
     'cv.h.exp':'Experiência',
     'cv.j1r':'Engenheira de Software — IA &amp; Nuvem',
-    'cv.j1a':'Projetei um sistema multiagente de IA em produção para triagem de tickets operacionais (supervisor, colaboradores, reincidência), orquestrado em AWS serverless.',
+    'cv.j1a':'Projetei um sistema multiagente de IA em produção para triagem de tickets operacionais (supervisor, colaboradores, reincidência) na AWS: EventBridge → Lambda → Athena / Data Lake, integrado ao Zendesk.',
     'cv.j1b':'Expus os dados do Power BI como servidor MCP para os agentes de IA consumirem métricas ao vivo; construí dashboards normalizados (território, forecast, renovações, ACV).',
     'cv.j1c':'Consolidei a observabilidade em New Relic e CloudWatch — dashboards, alertas e runbooks que mantêm as cargas na AWS confiáveis.',
     'cv.j1d':'Migrei um produto interno de operações para a nova geração da plataforma da empresa — design/prototipação de UI, mapeamento de processos e dry runs por país.',
