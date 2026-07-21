@@ -181,6 +181,16 @@
   .reveal.in{opacity:1; transform:none}
   @media (prefers-reduced-motion:reduce){ .reveal{opacity:1; transform:none; transition:none} }
 
+  .certs{display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr)); gap:14px}
+  .cert{display:flex; gap:14px; align-items:flex-start; padding:16px 18px; border:1px solid var(--line); border-radius:12px; background:var(--card); transition:.18s}
+  .cert:hover{border-color:var(--accent-line); transform:translateY(-2px)}
+  .cert .badge{flex:none; width:40px; height:40px; border-radius:9px; display:grid; place-items:center; background:var(--accent-soft); border:1px solid var(--accent-line)}
+  .cert .badge svg{width:21px; height:21px}
+  .cert h3{font-size:.95rem; font-weight:650; line-height:1.3; letter-spacing:-.01em; margin:0 0 4px}
+  .cert .iss{font-family:var(--mono); font-size:.72rem; color:var(--text2)}
+  .cert .iss b{color:var(--accent); font-weight:600}
+  .cert .yr{font-family:var(--mono); font-size:.68rem; color:var(--text3); margin-top:4px; letter-spacing:.04em}
+
   /* ===== CV / RÉSUMÉ — a dedicated document, assembled (not a screenshot of the site) ===== */
   #cv{ display:none; }
   @media print{
@@ -444,6 +454,32 @@
       </div>
     </section>
 
+    <section id="certs">
+      <div class="sec-head"><span class="sec-idx">05</span><h2 data-i18n="ce.h">Certifications</h2><span class="sec-sub" data-i18n="ce.sub">Continuous learning — AI, front-end and engineering.</span></div>
+      <div class="certs">
+        <article class="cert">
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l1.5 4L18 9.5 13.5 11 12 15l-1.5-4L6 9.5 10.5 8z"/></svg></span>
+          <div><h3 data-i18n="ce.1n">AI for Everyone</h3><div class="iss"><b>DeepLearning.AI</b></div><div class="yr">2025</div></div>
+        </article>
+        <article class="cert">
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h4l5 8 5-8h4L12 21z"/></svg></span>
+          <div><h3 data-i18n="ce.2n">Advanced Web Dev with Vue (v2 &amp; v3) &amp; Vuex</h3><div class="iss"><b>Udemy</b></div><div class="yr">2023</div></div>
+        </article>
+        <article class="cert">
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="M9 13l-2 8 5-3 5 3-2-8"/></svg></span>
+          <div><h3>Eagle Award 2022</h3><div class="iss"><b>PRO</b> · POLI-USP</div><div class="yr">2022</div></div>
+        </article>
+        <article class="cert">
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M7 8h8v9a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2z"/><path d="M15 10h2a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-2"/><path d="M9 5v2M12 4.5V7"/></svg></span>
+          <div><h3>Beer Lovers Certificate</h3><div class="iss"><b>Ambev</b></div><div class="yr">2019</div></div>
+        </article>
+        <article class="cert">
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c2.8 2 4 5.5 4 9l-4 3-4-3c0-3.5 1.2-7 4-9z"/><circle cx="12" cy="9" r="1.5"/><path d="M8 16l-2 4M16 16l2 4"/></svg></span>
+          <div><h3>The Rocket Experience</h3><div class="iss"><b>Ambev</b></div><div class="yr">2019</div></div>
+        </article>
+      </div>
+    </section>
+
     <section id="mission" class="mission">
       <div class="mission-in reveal">
         <svg class="sun" viewBox="0 0 120 120" role="img" aria-label="A sunflower"><g transform="translate(60 60)"><path d="M0 24 C -6 48, 6 70, 0 96" stroke="var(--leaf)" stroke-width="5" fill="none"/><ellipse cx="-18" cy="60" rx="20" ry="9" fill="var(--leaf)" transform="rotate(-25 -18 60)"/><g fill="var(--accent)"><ellipse rx="8" ry="24" cy="-30"/><ellipse rx="8" ry="24" cy="-30" transform="rotate(24)"/><ellipse rx="8" ry="24" cy="-30" transform="rotate(48)"/><ellipse rx="8" ry="24" cy="-30" transform="rotate(72)"/><ellipse rx="8" ry="24" cy="-30" transform="rotate(96)"/><ellipse rx="8" ry="24" cy="-30" transform="rotate(120)"/><ellipse rx="8" ry="24" cy="-30" transform="rotate(144)"/><ellipse rx="8" ry="24" cy="-30" transform="rotate(168)"/><ellipse rx="8" ry="24" cy="-30" transform="rotate(192)"/><ellipse rx="8" ry="24" cy="-30" transform="rotate(216)"/><ellipse rx="8" ry="24" cy="-30" transform="rotate(240)"/><ellipse rx="8" ry="24" cy="-30" transform="rotate(264)"/><ellipse rx="8" ry="24" cy="-30" transform="rotate(288)"/><ellipse rx="8" ry="24" cy="-30" transform="rotate(312)"/><ellipse rx="8" ry="24" cy="-30" transform="rotate(336)"/></g><circle r="19" fill="#6E4A1E"/><circle r="12" fill="#4A2F12"/></g></svg>
@@ -456,7 +492,7 @@
     </section>
 
     <section id="impact">
-      <div class="sec-head"><span class="sec-idx">05</span><h2 data-i18n="i.h">Impact</h2><span class="sec-sub" data-i18n="i.sub">Qualitative outcomes across the operation.</span></div>
+      <div class="sec-head"><span class="sec-idx">06</span><h2 data-i18n="i.h">Impact</h2><span class="sec-sub" data-i18n="i.sub">Qualitative outcomes across the operation.</span></div>
       <div class="impact">
         <div class="imp"><span class="n" data-i18n="i.n1">Automation at scale</span><p data-i18n="i.p1">Triage and analysis of operational records automated across LATAM — standardized with recurrence detection that was previously manual.</p></div>
         <div class="imp"><span class="n" data-i18n="i.n2">Lower cloud cost</span><p data-i18n="i.p2">Redundant telemetry eliminated and streams rationalized (FinOps), with observability unified in New Relic.</p></div>
@@ -555,6 +591,14 @@
     </div>
   </div>
 
+  <div class="cv-sec">
+    <h2 data-i18n="cv.h.cert">Certifications</h2>
+    <div class="cv-proj">
+      <p><b data-i18n="ce.1n">AI for Everyone</b> — DeepLearning.AI · 2025 &nbsp;&nbsp;·&nbsp;&nbsp; <b data-i18n="ce.2n">Advanced Web Dev with Vue (v2 &amp; v3) &amp; Vuex</b> — Udemy · 2023</p>
+      <p><b>Eagle Award 2022</b> — PRO · POLI-USP · 2022 &nbsp;&nbsp;·&nbsp;&nbsp; <b>Beer Lovers Certificate</b> · <b>The Rocket Experience</b> — Ambev · 2019</p>
+    </div>
+  </div>
+
   <p class="cv-foot" data-i18n="cv.foot">paulawiltiner.pw@gmail.com · linkedin.com/in/paulawiltiner · References available on request</p>
 </section>
 
@@ -638,7 +682,10 @@
     'cv.edu':'Engenharia de Produção · conclusão prevista 2027',
     'cv.h.lang':'Idiomas',
     'cv.lang':'Português (nativo) · Inglês (intermediário) · Espanhol (básico)',
-    'cv.foot':'paulawiltiner.pw@gmail.com · linkedin.com/in/paulawiltiner · Referências disponíveis mediante solicitação'
+    'cv.foot':'paulawiltiner.pw@gmail.com · linkedin.com/in/paulawiltiner · Referências disponíveis mediante solicitação',
+    'cv.h.cert':'Certificações',
+    'ce.h':'Certificações','ce.sub':'Aprendizado contínuo — IA, front-end e engenharia.',
+    'ce.1n':'IA para todos','ce.2n':'Desenvolvimento Web Avançado com Vue (v2 e v3) e Vuex'
   };
   var EN={};
   document.querySelectorAll('[data-i18n]').forEach(function(el){ EN[el.getAttribute('data-i18n')]=el.innerHTML; });
