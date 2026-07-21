@@ -248,6 +248,7 @@
     html,body{ background:#fff !important; }
     .page{ display:none !important; }
     #cv{ display:block !important; color:#1b1b1b; font-family:var(--sans); font-size:10.3px; line-height:1.5; letter-spacing:0; }
+    #cv .cv-doc-2{ break-before:page; page-break-before:always; }
     #cv *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
     #cv a{ color:#1b1b1b; text-decoration:none; }
     #cv b{ font-weight:700; }
@@ -614,90 +615,153 @@
 </div>
 
 <section id="cv" aria-hidden="true">
+  <!-- ============ PAGE 1 · ENGLISH ============ -->
+  <div class="cv-doc" lang="en">
   <div class="cv-top">
     <div>
       <h1 class="cv-name">Paula Wiltiner Reis Santana</h1>
-      <p class="cv-title" data-i18n="cv.role">AI &amp; Software Engineer · AWS · Automation</p>
+      <p class="cv-title">AI &amp; Software Engineer · AWS · Automation</p>
     </div>
     <ul class="cv-contact">
-      <li data-i18n="cv.loc">Florianópolis, SC — Brazil · Remote</li>
+      <li>Florianópolis, SC — Brazil · Remote</li>
       <li>paulawiltiner.pw@gmail.com</li>
       <li>linkedin.com/in/paulawiltiner</li>
       <li>github.com/PaulaWiltiner</li>
     </ul>
   </div>
-
   <div class="cv-sec">
-    <h2 data-i18n="cv.h.sum">Professional summary</h2>
-    <p class="cv-sum" data-i18n="cv.sum">AI &amp; Software Engineer with 3+ years building production AI systems and cloud automation end to end — from architecture and serverless back-ends to multi-agent LLM orchestration and the observability that keeps them running. I don't stop at diagnosing the cause; I like solving well, with optimized, low-cost solutions that scale. Technical reference for the AI layer of SEK's internal products, working across five Latin American countries in three languages.</p>
+    <h2>Professional summary</h2>
+    <p class="cv-sum">AI &amp; Software Engineer with 3+ years building production AI systems and cloud automation end to end — from architecture and serverless back-ends to multi-agent LLM orchestration and the observability that keeps them running. I don't stop at diagnosing the cause; I like solving well, with optimized, low-cost solutions that scale. Technical reference for the AI layer of SEK's internal products, working across five Latin American countries in three languages.</p>
   </div>
-
   <div class="cv-sec">
-    <h2 data-i18n="cv.h.skills">Core competencies</h2>
+    <h2>Core competencies</h2>
     <ul class="cv-skills">
-      <li data-i18n="cv.sk1">Multi-agent AI systems — design, orchestration, HITL</li>
-      <li data-i18n="cv.sk2">LLM engineering — Claude, RAG, prompt engineering, MCP</li>
-      <li data-i18n="cv.sk3">AWS serverless &amp; event-driven — Lambda, EventBridge, Step Functions</li>
-      <li data-i18n="cv.sk4">Data &amp; analytics — Athena, Data Lake, Power BI, DAX</li>
-      <li data-i18n="cv.sk5">AI-driven automation of operational workflows</li>
-      <li data-i18n="cv.sk6">Observability &amp; FinOps — New Relic, CloudWatch, cost tuning</li>
-      <li data-i18n="cv.sk7">Front-end — Vue.js, Pinia, TypeScript, design systems</li>
-      <li data-i18n="cv.sk8">Cross-cloud integration — Azure APIM, Entra ID</li>
+      <li>Multi-agent AI systems — design, orchestration, HITL</li>
+      <li>LLM engineering — Claude, RAG, prompt engineering, MCP</li>
+      <li>AWS serverless &amp; event-driven — Lambda, EventBridge, Step Functions</li>
+      <li>Data &amp; analytics — Athena, Data Lake, Power BI, DAX</li>
+      <li>AI-driven automation of operational workflows</li>
+      <li>Observability &amp; FinOps — New Relic, CloudWatch, cost tuning</li>
+      <li>Front-end — Vue.js, Pinia, TypeScript, design systems</li>
+      <li>Cross-cloud integration — Azure APIM, Entra ID</li>
     </ul>
   </div>
-
   <div class="cv-sec">
-    <h2 data-i18n="cv.h.exp">Experience</h2>
+    <h2>Experience</h2>
     <div class="cv-job">
-      <div class="cv-job-h"><b data-i18n="cv.j1r">Software Engineer — AI &amp; Cloud</b><span>Mar 2023 — Present</span></div>
+      <div class="cv-job-h"><b>Software Engineer — AI &amp; Cloud</b><span>Mar 2023 — Present</span></div>
       <div class="cv-job-sub">SEK · Cybersecurity (LATAM) · Remote</div>
       <ul>
-        <li data-i18n="cv.j1a">Designed SEK Logbook, a production multi-agent AI system (supervisor, collaborators, recurrence) that automates triage and analysis of operational tickets on AWS: EventBridge → Lambda → Athena / Data Lake → Zendesk.</li>
-        <li data-i18n="cv.j1b">Exposed the Power BI REST API as an MCP server via Azure API Management (service-principal auth), letting AI agents consume live sales data; built normalized sales dashboards (territory, forecast, renewals, ACV).</li>
-        <li data-i18n="cv.j1c">Consolidated observability into New Relic (migrating off Kibana/OpenSearch) with AWS telemetry streaming, alerts and runbooks; cut redundant streams for measurable FinOps savings.</li>
-        <li data-i18n="cv.j1d">Developed and migrated the Service Operations Hub to the next-gen platform (Nautilus) — UI design/prototyping (SOH 2.0), process mapping and per-country dry runs.</li>
-        <li data-i18n="cv.j1e">Early adopter of AI-driven development (AI-DLC / Forge) — a delivery accelerator and team reference for the practice.</li>
+        <li>Designed SEK Logbook, a production multi-agent AI system (supervisor, collaborators, recurrence) that automates triage and analysis of operational tickets on AWS: EventBridge → Lambda → Athena / Data Lake → Zendesk.</li>
+        <li>Exposed the Power BI REST API as an MCP server via Azure API Management (service-principal auth), letting AI agents consume live sales data; built normalized sales dashboards (territory, forecast, renewals, ACV).</li>
+        <li>Consolidated observability into New Relic (migrating off Kibana/OpenSearch) with AWS telemetry streaming, alerts and runbooks; cut redundant streams for measurable FinOps savings.</li>
+        <li>Developed and migrated the Service Operations Hub to the next-gen platform — UI design/prototyping, process mapping and per-country dry runs.</li>
+        <li>Early adopter of AI-driven development (AI-DLC) — a delivery accelerator and team reference for the practice.</li>
       </ul>
     </div>
   </div>
-
   <div class="cv-sec">
-    <h2 data-i18n="cv.h.proj">Selected projects — BuildLab</h2>
+    <h2>Selected projects — BuildLab</h2>
     <div class="cv-proj">
-      <p><b>Antioquia</b> — <span data-i18n="cv.p.ant">real-time AI political-intelligence platform (multi-tenant, RAG/pgvector, multi-LLM copilot, live monitoring, HITL). Next.js 16, ZenStack, Inngest.</span></p>
-      <p><b>Lyra</b> — <span data-i18n="cv.p.lyra">subscription ebooks platform — retail + admin (web) and a mobile reader (Expo). ZenStack on Neon Postgres.</span></p>
-      <p><b>KLP Turismo</b> — <span data-i18n="cv.p.klp">tourism platform — web admin + Expo/React Native app sharing one design system in a monorepo; e2e tests in Maestro.</span></p>
-      <p><b>Cris Renaux</b> — <span data-i18n="cv.p.cris">AI image-generation &amp; editing studio with Google Gemini; library, history and email delivery.</span></p>
+      <p><b>Antioquia</b> — real-time AI political-intelligence platform (multi-tenant, RAG/pgvector, multi-LLM copilot, live monitoring, HITL). Next.js 16, ZenStack, Inngest.</p>
+      <p><b>Lyra</b> — subscription ebooks platform — retail + admin (web) and a mobile reader (Expo). ZenStack on Neon Postgres.</p>
+      <p><b>KLP Turismo</b> — tourism platform — web admin + Expo/React Native app sharing one design system in a monorepo; e2e tests in Maestro.</p>
+      <p><b>Cris Renaux</b> — AI image-generation &amp; editing studio with Google Gemini; library, history and email delivery.</p>
     </div>
   </div>
-
   <div class="cv-sec cv-two">
-    <div>
-      <h2 data-i18n="cv.h.edu">Education</h2>
-      <p><b>UFSC</b> — <span data-i18n="cv.edu">Production Engineering · Expected 2027</span></p>
-    </div>
-    <div>
-      <h2 data-i18n="cv.h.lang">Languages</h2>
-      <p data-i18n="cv.lang">Portuguese (native) · English (intermediate) · Spanish (basic)</p>
-    </div>
+    <div><h2>Education</h2><p><b>UFSC</b> — Production Engineering · Expected 2027</p></div>
+    <div><h2>Languages</h2><p>Portuguese (native) · English (intermediate) · Spanish (basic)</p></div>
   </div>
-
   <div class="cv-sec">
-    <h2 data-i18n="cv.h.cert">Certifications</h2>
+    <h2>Certifications</h2>
     <div class="cv-proj">
-      <p><b data-i18n="ce.1n">AI for Everyone</b> — DeepLearning.AI · 2025 &nbsp;&nbsp;·&nbsp;&nbsp; <b data-i18n="ce.2n">Advanced Web Dev with Vue (v2 &amp; v3) &amp; Vuex</b> — Udemy · 2023</p>
+      <p><b>AI for Everyone</b> — DeepLearning.AI · 2025 &nbsp;&nbsp;·&nbsp;&nbsp; <b>Advanced Web Dev with Vue (v2 &amp; v3) &amp; Vuex</b> — Udemy · 2023</p>
       <p><b>Eagle Award 2022</b> — PRO · POLI-USP · 2022 &nbsp;&nbsp;·&nbsp;&nbsp; <b>Beer Lovers Certificate</b> · <b>The Rocket Experience</b> — Ambev · 2019</p>
     </div>
   </div>
-
   <div class="cv-sec">
-    <h2 data-i18n="cv.h.vol">Volunteering</h2>
+    <h2>Volunteering</h2>
     <div class="cv-proj">
-      <p><b data-i18n="v.1t">Physics Teacher</b> — CPVAM, community prep course · 2018 &nbsp;&nbsp;·&nbsp;&nbsp; <b data-i18n="v.2t">Research Assistant</b> — Escola Politécnica, USP · 2018–2019</p>
+      <p><b>Physics Teacher</b> — CPVAM, community prep course · 2018 &nbsp;&nbsp;·&nbsp;&nbsp; <b>Research Assistant</b> — Escola Politécnica, USP · 2018–2019</p>
     </div>
   </div>
+  <p class="cv-foot">paulawiltiner.pw@gmail.com · linkedin.com/in/paulawiltiner · References available on request</p>
+  </div>
 
-  <p class="cv-foot" data-i18n="cv.foot">paulawiltiner.pw@gmail.com · linkedin.com/in/paulawiltiner · References available on request</p>
+  <!-- ============ PAGE 2 · PORTUGUÊS ============ -->
+  <div class="cv-doc cv-doc-2" lang="pt">
+  <div class="cv-top">
+    <div>
+      <h1 class="cv-name">Paula Wiltiner Reis Santana</h1>
+      <p class="cv-title">Engenheira de IA &amp; Software · AWS · Automação</p>
+    </div>
+    <ul class="cv-contact">
+      <li>Florianópolis, SC — Brasil · Remoto</li>
+      <li>paulawiltiner.pw@gmail.com</li>
+      <li>linkedin.com/in/paulawiltiner</li>
+      <li>github.com/PaulaWiltiner</li>
+    </ul>
+  </div>
+  <div class="cv-sec">
+    <h2>Resumo profissional</h2>
+    <p class="cv-sum">Engenheira de IA &amp; Software com mais de 3 anos construindo sistemas de IA em produção e automação em nuvem de ponta a ponta — da arquitetura e back-ends serverless à orquestração de LLMs multiagente e à observabilidade que os mantém no ar. Não paro no diagnóstico da causa; gosto de resolver bem, com soluções otimizadas e de baixo custo que escalam. Referência técnica da camada de IA dos produtos internos da SEK, atuando em cinco países da América Latina em três idiomas.</p>
+  </div>
+  <div class="cv-sec">
+    <h2>Competências principais</h2>
+    <ul class="cv-skills">
+      <li>Sistemas de IA multiagente — design, orquestração, HITL</li>
+      <li>Engenharia de LLM — Claude, RAG, prompt engineering, MCP</li>
+      <li>AWS serverless &amp; event-driven — Lambda, EventBridge, Step Functions</li>
+      <li>Dados &amp; analytics — Athena, Data Lake, Power BI, DAX</li>
+      <li>Automação de fluxos operacionais dirigida por IA</li>
+      <li>Observabilidade &amp; FinOps — New Relic, CloudWatch, otimização de custo</li>
+      <li>Front-end — Vue.js, Pinia, TypeScript, design systems</li>
+      <li>Integração cross-cloud — Azure APIM, Entra ID</li>
+    </ul>
+  </div>
+  <div class="cv-sec">
+    <h2>Experiência</h2>
+    <div class="cv-job">
+      <div class="cv-job-h"><b>Engenheira de Software — IA &amp; Nuvem</b><span>mar 2023 — atual</span></div>
+      <div class="cv-job-sub">SEK · Cibersegurança (LATAM) · Remoto</div>
+      <ul>
+        <li>Projetei o SEK Logbook, sistema multiagente de IA em produção (supervisor, colaboradores, reincidência) que automatiza a triagem e a análise de tickets operacionais na AWS: EventBridge → Lambda → Athena / Data Lake → Zendesk.</li>
+        <li>Expus a REST API do Power BI como servidor MCP via Azure API Management (autenticação por service principal), permitindo que agentes de IA consumam dados de vendas ao vivo; construí dashboards normalizados (território, forecast, renovações, ACV).</li>
+        <li>Consolidei a observabilidade no New Relic (migrando de Kibana/OpenSearch) com streaming de telemetria AWS, alertas e runbooks; cortei streams redundantes com economia mensurável (FinOps).</li>
+        <li>Desenvolvi e migrei o Service Operations Hub para a nova geração da plataforma — design/prototipação de UI, mapeamento de processos e dry runs por país.</li>
+        <li>Early adopter de desenvolvimento dirigido por IA (AI-DLC) — acelerador de entrega e referência da prática no time.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="cv-sec">
+    <h2>Projetos selecionados — BuildLab</h2>
+    <div class="cv-proj">
+      <p><b>Antioquia</b> — plataforma de inteligência política com IA em tempo real (multi-tenant, RAG/pgvector, copiloto multi-LLM, monitoramento ao vivo, HITL). Next.js 16, ZenStack, Inngest.</p>
+      <p><b>Lyra</b> — plataforma de ebooks por assinatura — varejo + admin (web) e leitor mobile (Expo). ZenStack no Neon Postgres.</p>
+      <p><b>KLP Turismo</b> — plataforma de turismo — admin web + app Expo/React Native compartilhando um design system em monorepo; testes e2e no Maestro.</p>
+      <p><b>Cris Renaux</b> — estúdio de geração e edição de imagens com IA usando Google Gemini; biblioteca, histórico e entrega por e-mail.</p>
+    </div>
+  </div>
+  <div class="cv-sec cv-two">
+    <div><h2>Formação</h2><p><b>UFSC</b> — Engenharia de Produção · conclusão prevista 2027</p></div>
+    <div><h2>Idiomas</h2><p>Português (nativo) · Inglês (intermediário) · Espanhol (básico)</p></div>
+  </div>
+  <div class="cv-sec">
+    <h2>Certificações</h2>
+    <div class="cv-proj">
+      <p><b>IA para todos</b> — DeepLearning.AI · 2025 &nbsp;&nbsp;·&nbsp;&nbsp; <b>Desenvolvimento Web Avançado com Vue (v2 e v3) e Vuex</b> — Udemy · 2023</p>
+      <p><b>Eagle Award 2022</b> — PRO · POLI-USP · 2022 &nbsp;&nbsp;·&nbsp;&nbsp; <b>Beer Lovers Certificate</b> · <b>The Rocket Experience</b> — Ambev · 2019</p>
+    </div>
+  </div>
+  <div class="cv-sec">
+    <h2>Voluntariado</h2>
+    <div class="cv-proj">
+      <p><b>Professor de Física</b> — CPVAM, cursinho popular · 2018 &nbsp;&nbsp;·&nbsp;&nbsp; <b>Assistente de Pesquisa</b> — Escola Politécnica, USP · 2018–2019</p>
+    </div>
+  </div>
+  <p class="cv-foot">paulawiltiner.pw@gmail.com · linkedin.com/in/paulawiltiner · Referências disponíveis mediante solicitação</p>
+  </div>
 </section>
 
 <script>
