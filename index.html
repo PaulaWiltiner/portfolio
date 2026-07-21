@@ -100,8 +100,39 @@
   .pipe{margin-top:clamp(38px,6vw,58px); border:1px solid var(--line); border-radius:var(--radius); background:linear-gradient(180deg, var(--bg2), color-mix(in srgb,var(--card) 60%, var(--bg2))); overflow:hidden}
   .pipe-head{display:flex; align-items:center; gap:10px; padding:12px 16px; border-bottom:1px solid var(--line); font-family:var(--mono); font-size:.72rem; color:var(--text2); letter-spacing:.06em}
   .pipe-head .led{width:9px; height:9px; border-radius:50%; background:var(--accent); box-shadow:0 0 10px var(--accent-line)}
-  .pipe canvas{display:block; width:100%; height:200px}
-  @media (max-width:640px){ .pipe{overflow-x:auto} .pipe canvas{height:150px; min-width:520px} }
+  /* ===== agentic assembly line (Forge) ===== */
+  .al{position:relative; height:186px; margin:10px 12px 0}
+  .al-track{position:absolute; left:6%; right:6%; top:122px; height:6px; border-radius:6px; background:var(--accent-soft); overflow:hidden}
+  .al-track:before{content:""; position:absolute; inset:0; background:repeating-linear-gradient(90deg,transparent 0 14px,var(--accent-line) 14px 22px); background-size:36px 100%; animation:belt 1.1s linear infinite}
+  @keyframes belt{to{background-position-x:36px}}
+  .al-fill{position:absolute; left:6%; top:122px; height:6px; width:0; background:var(--accent); border-radius:6px; z-index:1; transition:width .85s cubic-bezier(.45,.05,.2,1)}
+  .al-piece{position:absolute; top:90px; left:10%; transform:translateX(-50%); background:var(--card); border:1px solid var(--accent-line); border-radius:9px; padding:7px; display:flex; gap:4px; box-shadow:0 8px 20px rgba(0,0,0,.35); z-index:4; transition:left .85s cubic-bezier(.45,.05,.2,1),opacity .35s,transform .3s,border-color .3s}
+  .al-blk{width:10px; height:15px; border-radius:3px; background:var(--accent-soft); border:1px solid var(--accent-line); transform:scaleY(.66); transition:all .35s cubic-bezier(.3,1.3,.5,1)}
+  .al-blk.on{background:var(--accent); border-color:var(--accent); transform:scaleY(1); box-shadow:0 0 8px var(--accent-line)}
+  .al-piece.done{border-color:var(--accent); transform:translateX(-50%) scale(1.08); animation:pcpulse 1.1s ease-in-out infinite}
+  @keyframes pcpulse{0%,100%{box-shadow:0 0 0 0 var(--accent-line)}50%{box-shadow:0 0 0 9px transparent}}
+  .al-piece.deliver{transition:transform .6s cubic-bezier(.4,0,.2,1),opacity .55s ease; transform:translateX(-50%) translateY(-84px) scale(.5); opacity:0}
+  .al-up{position:absolute; left:90%; top:46px; height:46px; border-left:2px dashed var(--teal); opacity:.4; transform:translateX(-50%)}
+  .al-dock{position:absolute; top:8px; left:90%; transform:translateX(-50%); display:flex; align-items:center; gap:7px; background:var(--card); border:1px solid var(--line-2); border-radius:10px; padding:7px 12px; font-family:var(--mono); font-weight:600; font-size:.72rem; color:var(--text2); white-space:nowrap; z-index:3; transition:all .4s}
+  .al-dock .nz{width:9px; height:9px; background:var(--line-2); transform:rotate(45deg); transition:all .4s}
+  .al-dock.lit{border-color:var(--teal); box-shadow:0 0 22px var(--teal-soft); color:var(--teal); transform:translateX(-50%) translateY(-2px)}
+  .al-dock.lit .nz{background:var(--teal); box-shadow:0 0 9px var(--teal)}
+  .al-node{position:absolute; top:0; width:120px; transform:translateX(-50%)}
+  .al-dot{position:absolute; top:114px; left:50%; transform:translateX(-50%); width:20px; height:20px; border-radius:50%; background:var(--card); border:2px solid var(--line-2); z-index:2; transition:all .3s; display:grid; place-items:center}
+  .al-node.active .al-dot{background:var(--accent); border-color:var(--accent); animation:dotp 1.2s ease-in-out infinite}
+  @keyframes dotp{0%,100%{box-shadow:0 0 0 3px var(--accent-soft)}50%{box-shadow:0 0 0 12px transparent}}
+  .al-node.passed .al-dot{background:var(--accent); border-color:var(--accent)}
+  .al-ck{color:var(--on-accent); font-size:11px; font-weight:700; opacity:0; transition:opacity .3s; line-height:1}
+  .al-node.passed .al-ck{opacity:1}
+  .al-lab{position:absolute; top:142px; left:0; right:0; text-align:center; padding:0 4px}
+  .al-lab .n{font-family:var(--mono); font-weight:600; font-size:.8rem; color:var(--text); transition:color .3s}
+  .al-lab .d{font-family:var(--mono); font-size:.6rem; text-transform:uppercase; letter-spacing:.08em; color:var(--text3); margin-top:5px}
+  .al-node.active .al-lab .n{color:var(--accent)}
+  .al-tally{position:absolute; top:2px; left:4px; font-family:var(--mono); font-size:.68rem; color:var(--text3); letter-spacing:.04em; z-index:5}
+  .al-tally b{color:var(--accent); font-weight:700; font-size:.8rem}
+  .al-cap{margin:12px 16px 4px; text-align:center; font-family:var(--mono); font-size:.74rem; color:var(--accent); min-height:20px; transition:color .3s}
+  @media (prefers-reduced-motion:reduce){ .al-track:before{animation:none} .al-piece.done{animation:none} .al-node.active .al-dot{animation:none} }
+  @media (max-width:640px){ .pipe{overflow-x:auto} .al{min-width:540px} }
   .pipe-cap{margin-top:16px; color:var(--text2); font-size:.92rem; line-height:1.58; max-width:74ch}
   .pipe-cap b{color:var(--accent); font-weight:600}
 
@@ -293,7 +324,20 @@
       </div>
       <div class="pipe reveal no-print">
         <div class="pipe-head"><i class="led"></i><span data-i18n="p.head">FORGE — an agentic assembly line for software delivery</span></div>
-        <canvas id="pipe" width="1100" height="200" role="img" aria-label="Animated diagram of an agentic software assembly line: Idea, Design, Spec, Build and Ship, with AI agents working each stage."></canvas>
+        <div class="al" id="al" role="img" aria-label="Animated assembly line: a piece moves through Idea, Design, Spec, Build and Ship, then ships to production.">
+          <div class="al-tally" id="alTally">shipped · <b>0</b></div>
+          <div class="al-track"></div>
+          <div class="al-fill" id="alFill"></div>
+          <div class="al-up"></div>
+          <div class="al-dock" id="alDock"><span class="nz"></span>Live</div>
+          <div class="al-piece" id="alPiece"><span class="al-blk"></span><span class="al-blk"></span><span class="al-blk"></span><span class="al-blk"></span><span class="al-blk"></span></div>
+          <div class="al-node" style="left:10%"><div class="al-dot"><span class="al-ck">✓</span></div><div class="al-lab"><div class="n">Idea</div><div class="d">brief</div></div></div>
+          <div class="al-node" style="left:30%"><div class="al-dot"><span class="al-ck">✓</span></div><div class="al-lab"><div class="n">Design</div><div class="d">UX</div></div></div>
+          <div class="al-node" style="left:50%"><div class="al-dot"><span class="al-ck">✓</span></div><div class="al-lab"><div class="n">Spec</div><div class="d">rules</div></div></div>
+          <div class="al-node" style="left:70%"><div class="al-dot"><span class="al-ck">✓</span></div><div class="al-lab"><div class="n">Build</div><div class="d">agents</div></div></div>
+          <div class="al-node" style="left:90%"><div class="al-dot"><span class="al-ck">✓</span></div><div class="al-lab"><div class="n">Ship</div><div class="d">deploy</div></div></div>
+        </div>
+        <div class="al-cap" id="alCap">&nbsp;</div>
       </div>
       <p class="pipe-cap reveal no-print" data-i18n="p.cap">A concept I proposed at SEK — specialized <b>AI agents</b> carry an idea from concept to launch: <b>spec-driven</b>, <b>multi-agent</b> and <b>human-on-the-loop</b>, with the team approving each station. The same AI-DLC direction the industry is converging on.</p>
     </header>
@@ -660,7 +704,7 @@
 (function(){
   var root=document.documentElement, mq=window.matchMedia('(prefers-color-scheme: dark)');
   function cur(){ return root.getAttribute('data-theme') || (mq.matches?'dark':'light'); }
-  document.getElementById('themeBtn').addEventListener('click',function(){ root.setAttribute('data-theme', cur()==='dark'?'light':'dark'); setTimeout(draw,60); });
+  document.getElementById('themeBtn').addEventListener('click',function(){ root.setAttribute('data-theme', cur()==='dark'?'light':'dark'); });
   document.getElementById('dlBtn').addEventListener('click',function(){ window.print(); });
 
   // ===== i18n =====
@@ -774,20 +818,60 @@
     this.querySelectorAll('.chip').forEach(function(c){c.setAttribute('aria-pressed', c===b?'true':'false');});
     var f=b.dataset.f; cards.forEach(function(c){ c.classList.toggle('hide', !(f==='all' || (' '+c.dataset.tags+' ').indexOf(' '+f+' ')>-1)); }); });
 
-  var cv=document.getElementById('pipe'), ctx=cv.getContext('2d'), W,H,dpr,t=0;
-  var steps=['Idea','Design','Spec','Build','Ship'];
-  function css(v){return getComputedStyle(root).getPropertyValue(v).trim();}
-  function resize(){ dpr=Math.min(window.devicePixelRatio||1,2); var r=cv.getBoundingClientRect(); W=r.width; H=r.height; cv.width=W*dpr; cv.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0); }
-  function nodes(){ var n=steps.length, pad=Math.max(60,W*0.09), gap=(W-pad*2)/(n-1), y=H/2; return steps.map(function(s,i){return {x:pad+gap*i,y:y,label:s};}); }
-  function draw(){ if(!W) resize(); var ac=css('--accent')||'#EEB13F', tl=css('--teal')||'#59D6C6', ln=css('--line-2')||'#2E3A58', tx=css('--text2')||'#98A2BD', bg=css('--card')||'#131B2E';
-    ctx.clearRect(0,0,W,H); var ns=nodes(); ctx.lineWidth=1.4; ctx.strokeStyle=ln;
-    for(var i=0;i<ns.length-1;i++){ ctx.beginPath(); ctx.moveTo(ns[i].x+13,ns[i].y); ctx.lineTo(ns[i+1].x-13,ns[i+1].y); ctx.stroke(); }
-    for(var i=0;i<ns.length-1;i++){ for(var d=0; d<2; d++){ var p=((t*0.006 + i*0.5 + d*0.5)%1); var x=ns[i].x+13+(ns[i+1].x-13-(ns[i].x+13))*p; ctx.beginPath(); ctx.arc(x,ns[i].y,2.6,0,6.283); ctx.fillStyle=(i>=2?tl:ac); ctx.fill(); } }
-    ns.forEach(function(n,i){ var pulse=1+Math.sin(t*0.05+i)*0.06; ctx.beginPath(); ctx.arc(n.x,n.y,13*pulse,0,6.283); ctx.fillStyle=bg; ctx.fill(); ctx.lineWidth=2; ctx.strokeStyle=(i===3?tl:ac); ctx.stroke(); ctx.beginPath(); ctx.arc(n.x,n.y,3.2,0,6.283); ctx.fillStyle=(i===3?tl:ac); ctx.fill(); ctx.fillStyle=tx; ctx.font='11px ui-monospace,Menlo,monospace'; ctx.textAlign='center'; ctx.fillText(n.label, n.x, n.y+30); }); }
-  var rmo=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function loop(){ t++; draw(); requestAnimationFrame(loop); }
-  window.addEventListener('resize',function(){resize();draw();});
-  resize(); if(rmo){ draw(); } else { loop(); }
+  var al=document.getElementById('al');
+  if(al){
+    var piece=document.getElementById('alPiece'),
+        alnodes=[].slice.call(al.querySelectorAll('.al-node')),
+        dock=document.getElementById('alDock'),
+        alfill=document.getElementById('alFill'),
+        tallyB=document.getElementById('alTally').querySelector('b'),
+        blks=[].slice.call(piece.querySelectorAll('.al-blk')),
+        alcap=document.getElementById('alCap');
+    var pcts=['10%','30%','50%','70%','90%'], fillP=['4%','24%','44%','64%','84%'];
+    var capsEn=['Idea — scope, users and success criteria.','Design — the experience, on the shared design system.','Spec — requirements, rules and architecture.','Build — AI agents write the code and tests; the team reviews.','Ship — deploy, docs and showcase.'];
+    var capsPt=['Ideia — escopo, usuários e critérios de sucesso.','Design — a experiência, no design system compartilhado.','Spec — requisitos, regras e arquitetura.','Build — agentes de IA escrevem o código e os testes; o time revisa.','Ship — deploy, documentação e showcase.'];
+    var doneCap={en:'Shipped — a module live in production.',pt:'Entregue — um módulo no ar em produção.'};
+    function isPt(){ return (typeof lang!=='undefined' && lang==='pt'); }
+    var alRm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(alRm){
+      alnodes.forEach(function(n){n.classList.add('passed');});
+      blks.forEach(function(b){b.classList.add('on');});
+      piece.style.left='90%'; alfill.style.width='84%'; dock.classList.add('lit'); tallyB.textContent='1';
+      alcap.textContent=isPt()?doneCap.pt:doneCap.en;
+    } else {
+      var ai=0;
+      function alstep(){
+        if(ai<5){
+          alnodes.forEach(function(n){n.classList.remove('active','passed');});
+          for(var k=0;k<ai;k++){ alnodes[k].classList.add('passed'); }
+          alnodes[ai].classList.add('active');
+          piece.style.opacity='1'; piece.style.left=pcts[ai]; alfill.style.width=fillP[ai];
+          for(var j=0;j<=ai;j++){ blks[j].classList.add('on'); }
+          if(ai===4){ piece.classList.add('done'); }
+          alcap.textContent=(isPt()?capsPt:capsEn)[ai];
+          ai++;
+        } else {
+          alnodes.forEach(function(n){ n.classList.remove('active'); n.classList.add('passed'); });
+          piece.classList.remove('done'); piece.classList.add('deliver'); dock.classList.add('lit');
+          tallyB.textContent=String(parseInt(tallyB.textContent,10)+1);
+          alcap.textContent=isPt()?doneCap.pt:doneCap.en;
+          setTimeout(function(){
+            dock.classList.remove('lit');
+            alnodes.forEach(function(n){n.classList.remove('active','passed');});
+            piece.style.transition='none'; alfill.style.transition='none';
+            piece.classList.remove('deliver');
+            piece.style.opacity='0'; piece.style.left=pcts[0]; alfill.style.width='0';
+            blks.forEach(function(b){b.classList.remove('on');});
+            void piece.offsetWidth;
+            piece.style.transition=''; alfill.style.transition='';
+          },1300);
+          ai=0;
+        }
+      }
+      alstep();
+      setInterval(alstep,1700);
+    }
+  }
 })();
 </script>
 </body>
