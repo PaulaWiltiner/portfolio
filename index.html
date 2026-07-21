@@ -102,6 +102,8 @@
   .pipe-head .led{width:9px; height:9px; border-radius:50%; background:var(--accent); box-shadow:0 0 10px var(--accent-line)}
   .pipe canvas{display:block; width:100%; height:200px}
   @media (max-width:640px){ .pipe{overflow-x:auto} .pipe canvas{height:150px; min-width:520px} }
+  .pipe-cap{margin-top:16px; color:var(--text2); font-size:.92rem; line-height:1.58; max-width:74ch}
+  .pipe-cap b{color:var(--accent); font-weight:600}
 
   section{padding:clamp(52px,8vw,96px) 0; border-top:1px solid var(--line)}
   .sec-head{display:flex; align-items:baseline; gap:16px; margin-bottom:36px; flex-wrap:wrap}
@@ -262,11 +264,6 @@
     <header class="hero">
       <div class="hero-grid">
         <div class="hero-text">
-          <div class="cvhead">
-            <h2 class="cvname">Paula Wiltiner Reis Santana</h2>
-            <div class="cvrole">AI &amp; Software Engineer · AWS · Automation</div>
-            <div class="cvmeta">Florianópolis, Brazil · Remote · paulawiltiner.pw@gmail.com<br>linkedin.com/in/paulawiltiner · github.com/PaulaWiltiner</div>
-          </div>
           <span class="eyebrow" data-i18n="h.eyebrow">AI &amp; Software Engineer · AWS · Automation</span>
           <h1 data-i18n="h.title">I build AI systems and automation that <em>solve real problems.</em></h1>
           <p class="lede" data-i18n="h.lede">I don't stop at finding the root cause — I like <b>solving it</b>, with optimized, low-cost solutions. Multi-agent AI, AWS serverless and Claude-driven automation, from architecture to production.</p>
@@ -295,9 +292,10 @@
         </figure>
       </div>
       <div class="pipe reveal no-print">
-        <div class="pipe-head"><i class="led"></i>SEK LOGBOOK — event-driven AI automation on AWS</div>
-        <canvas id="pipe" width="1100" height="200" role="img" aria-label="Animated diagram: EventBridge triggers a Lambda that queries Athena and a Data Lake, feeding AI agents whose analyses return to Zendesk."></canvas>
+        <div class="pipe-head"><i class="led"></i><span data-i18n="p.head">FORGE — an agentic assembly line for software delivery</span></div>
+        <canvas id="pipe" width="1100" height="200" role="img" aria-label="Animated diagram of an agentic software assembly line: Idea, Design, Spec, Build and Ship, with AI agents working each stage."></canvas>
       </div>
+      <p class="pipe-cap reveal no-print" data-i18n="p.cap">A concept I proposed at SEK — specialized <b>AI agents</b> carry an idea from concept to launch: <b>spec-driven</b>, <b>multi-agent</b> and <b>human-on-the-loop</b>, with the team approving each station. The same AI-DLC direction the industry is converging on.</p>
     </header>
 
     <section id="about">
@@ -673,6 +671,8 @@
     'h.lede':"Não paro em achar a causa — eu gosto de <b>resolver</b>, com soluções otimizadas e de baixo custo. IA multiagente, AWS serverless e automação com Claude, da arquitetura à produção.",
     'h.f3':'/ automação LLM','h.f4':'Soluções de baixo custo',
     'h.loc':'Florianópolis, Brasil · Remoto','h.since':'SEK · desde 2023','h.dl':'Baixar CV ↓',
+    'p.head':'FORGE — uma linha de montagem agêntica para entrega de software',
+    'p.cap':'Um conceito que propus na SEK — <b>agentes de IA</b> especializados levam uma ideia da concepção ao lançamento: <b>spec-driven</b>, <b>multiagente</b> e <b>human-on-the-loop</b>, com o time aprovando cada estação. A mesma direção AI-DLC para onde a indústria está convergindo.',
     'a.h':'Perfil','a.sub':'Uma engenheira que transforma problemas em soluções otimizadas e de baixo custo.',
     'a.hi':'// Oi — eu sou a Paula.',
     'a.p1':'Sou <b>engenheira de IA &amp; software</b> e atuo de ponta a ponta — da arquitetura e back-end em nuvem a <b>agentes, automação</b> e a observabilidade que os mantém no ar. Construo produtos que combinam agentes LLM (Claude), pipelines de dados na <b>AWS</b> e automação de processos operacionais.',
@@ -775,7 +775,7 @@
     var f=b.dataset.f; cards.forEach(function(c){ c.classList.toggle('hide', !(f==='all' || (' '+c.dataset.tags+' ').indexOf(' '+f+' ')>-1)); }); });
 
   var cv=document.getElementById('pipe'), ctx=cv.getContext('2d'), W,H,dpr,t=0;
-  var steps=['EventBridge','Lambda','Athena · Data Lake','AI agents','Zendesk'];
+  var steps=['Idea','Design','Spec','Build','Ship'];
   function css(v){return getComputedStyle(root).getPropertyValue(v).trim();}
   function resize(){ dpr=Math.min(window.devicePixelRatio||1,2); var r=cv.getBoundingClientRect(); W=r.width; H=r.height; cv.width=W*dpr; cv.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0); }
   function nodes(){ var n=steps.length, pad=Math.max(60,W*0.09), gap=(W-pad*2)/(n-1), y=H/2; return steps.map(function(s,i){return {x:pad+gap*i,y:y,label:s};}); }
