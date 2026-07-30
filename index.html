@@ -32,6 +32,7 @@
 </script>
 </head>
 <body>
+
 <style>
   :root{
     --bg:#0B0F1A; --bg2:#0F1524; --card:#131B2E; --line:#232D46; --line-2:#2E3A58; --grid:rgba(120,150,220,.05);
@@ -256,6 +257,9 @@
     .page{ display:none !important; }
     #cv{ display:block !important; color:#1b1b1b; font-family:var(--sans); font-size:10.3px; line-height:1.5; letter-spacing:0; }
     #cv .cv-doc-2{ break-before:page; page-break-before:always; }
+    #cv.cv-mode-en .cv-doc-2{ display:none !important; }
+    #cv.cv-mode-pt .cv-doc:not(.cv-doc-2){ display:none !important; }
+    #cv.cv-mode-pt .cv-doc-2{ break-before:auto !important; page-break-before:auto !important; }
     #cv *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
     #cv a{ color:#1b1b1b; text-decoration:none; }
     #cv b{ font-weight:700; }
@@ -319,7 +323,8 @@
           <div class="cta">
             <a class="btn primary" href="https://www.linkedin.com/in/paulawiltiner/" target="_blank" rel="noopener">LinkedIn ↗</a>
             <a class="btn" href="https://github.com/PaulaWiltiner" target="_blank" rel="noopener">GitHub ↗</a>
-            <button class="btn" id="dlBtn" data-i18n="h.dl">Download CV ↓</button>
+            <button class="btn" id="dlBtnEn" data-i18n="h.dlEn">CV (EN) ↓</button>
+            <button class="btn" id="dlBtnPt" data-i18n="h.dlPt">CV (PT) ↓</button>
           </div>
         </div>
         <figure class="portrait">
@@ -638,7 +643,7 @@
   </div>
   <div class="cv-sec">
     <h2>Professional summary</h2>
-    <p class="cv-sum">AI &amp; Software Engineer with 3+ years building production AI systems and cloud automation end to end — from architecture and serverless back-ends to multi-agent LLM orchestration and the observability that keeps them running. I don't stop at diagnosing the cause; I like solving well, with optimized, low-cost solutions that scale. Technical reference for the AI layer of SEK's internal products, working across five Latin American countries in three languages.</p>
+    <p class="cv-sum">AI &amp; Software Engineer with 3+ years building production AI and cloud automation systems — multi-agent LLM orchestration, serverless back-ends, and the observability that keeps them reliable. I don't stop at diagnosing the cause; I like solving well, with optimized, low-cost solutions that scale. Technical reference for SEK's internal AI layer, working across five Latin American countries in three languages.</p>
   </div>
   <div class="cv-sec">
     <h2>Core competencies</h2>
@@ -662,8 +667,8 @@
         <li>Designed a production multi-agent AI system for operational ticket triage (supervisor, collaborators, recurrence agents) on AWS: EventBridge → Lambda → Athena / Data Lake, integrated with Zendesk — turning raw records into structured output (root cause, action plans).</li>
         <li>Exposed Power BI data as an MCP server so AI agents could consume live metrics; built normalized sales dashboards (territory, forecast, renewals, ACV).</li>
         <li>Consolidated observability on New Relic and CloudWatch — dashboards, alerts and runbooks that keep AWS workloads reliable.</li>
-        <li>Migrated an internal operations product to the company's next-generation platform — UI design/prototyping, process mapping and per-country dry runs.</li>
-        <li>Early adopter of AI-driven development (AI-DLC) — a delivery accelerator and team reference for the practice.</li>
+        <li>Migrated an internal operations product to the company's next-generation platform, covering UI prototyping, process mapping and per-country dry runs.</li>
+        <li>Early adopter of AI-driven development (AI-DLC), serving as a team reference for the practice and a delivery accelerator.</li>
       </ul>
     </div>
   </div>
@@ -712,7 +717,7 @@
   </div>
   <div class="cv-sec">
     <h2>Resumo profissional</h2>
-    <p class="cv-sum">Engenheira de IA &amp; Software com mais de 3 anos construindo sistemas de IA em produção e automação em nuvem de ponta a ponta — da arquitetura e back-ends serverless à orquestração de LLMs multiagente e à observabilidade que os mantém no ar. Não paro no diagnóstico da causa; gosto de resolver bem, com soluções otimizadas e de baixo custo que escalam. Referência técnica da camada de IA dos produtos internos da SEK, atuando em cinco países da América Latina em três idiomas.</p>
+    <p class="cv-sum">Engenheira de IA &amp; Software com mais de 3 anos construindo sistemas de IA em produção e automação em nuvem — orquestração de LLMs multiagente, back-ends serverless e a observabilidade que os mantém confiáveis. Não paro no diagnóstico da causa; gosto de resolver bem, com soluções otimizadas e de baixo custo que escalam. Referência técnica da camada de IA da SEK, atuando em cinco países da América Latina em três idiomas.</p>
   </div>
   <div class="cv-sec">
     <h2>Competências principais</h2>
@@ -736,8 +741,8 @@
         <li>Projetei um sistema multiagente de IA em produção para triagem de tickets operacionais (supervisor, colaboradores, reincidência) na AWS: EventBridge → Lambda → Athena / Data Lake, integrado ao Zendesk — transformando registros crus em saída estruturada (causa-raiz, plano de ação).</li>
         <li>Expus os dados do Power BI como servidor MCP para os agentes de IA consumirem métricas ao vivo; construí dashboards normalizados (território, forecast, renovações, ACV).</li>
         <li>Consolidei a observabilidade em New Relic e CloudWatch — dashboards, alertas e runbooks que mantêm as cargas na AWS confiáveis.</li>
-        <li>Migrei um produto interno de operações para a nova geração da plataforma da empresa — design/prototipação de UI, mapeamento de processos e dry runs por país.</li>
-        <li>Early adopter de desenvolvimento dirigido por IA (AI-DLC) — acelerador de entrega e referência da prática no time.</li>
+        <li>Migrei um produto interno de operações para a nova geração da plataforma da empresa, cobrindo prototipação de UI, mapeamento de processos e dry runs por país.</li>
+        <li>Early adopter de desenvolvimento dirigido por IA (AI-DLC), servindo como referência da prática no time e acelerador de entrega.</li>
       </ul>
     </div>
   </div>
@@ -776,7 +781,15 @@
   var root=document.documentElement, mq=window.matchMedia('(prefers-color-scheme: dark)');
   function cur(){ return root.getAttribute('data-theme') || (mq.matches?'dark':'light'); }
   document.getElementById('themeBtn').addEventListener('click',function(){ root.setAttribute('data-theme', cur()==='dark'?'light':'dark'); });
-  document.getElementById('dlBtn').addEventListener('click',function(){ window.print(); });
+  var cvEl=document.getElementById('cv');
+  function printCv(mode){
+    cvEl.classList.remove('cv-mode-en','cv-mode-pt');
+    cvEl.classList.add('cv-mode-'+mode);
+    window.print();
+  }
+  window.addEventListener('afterprint',function(){ cvEl.classList.remove('cv-mode-en','cv-mode-pt'); });
+  document.getElementById('dlBtnEn').addEventListener('click',function(){ printCv('en'); });
+  document.getElementById('dlBtnPt').addEventListener('click',function(){ printCv('pt'); });
 
   // ===== i18n =====
   var I18N={
@@ -785,7 +798,7 @@
     'h.title':'Construo sistemas de IA e automação que <em>resolvem problemas reais.</em>',
     'h.lede':"Não paro em achar a causa — eu gosto de <b>resolver</b>, com soluções otimizadas e de baixo custo. IA multiagente, AWS serverless e automação com Claude, da arquitetura à produção.",
     'h.f3':'/ automação LLM',
-    'h.loc':'Florianópolis, Brasil · Remoto','h.since':'SEK · desde 2023','h.dl':'Baixar CV ↓',
+    'h.loc':'Florianópolis, Brasil · Remoto','h.since':'SEK · desde 2023','h.dlEn':'CV (EN) ↓','h.dlPt':'CV (PT) ↓',
     'p.head':'FORGE — uma linha de montagem agêntica para entrega de software',
     'p.cap':'Um conceito que propus na SEK — <b>agentes de IA</b> especializados levam uma ideia da concepção ao lançamento: <b>spec-driven</b>, <b>multiagente</b> e <b>human-on-the-loop</b>, com o time aprovando cada estação. A mesma direção AI-DLC para onde a indústria está convergindo.',
     'a.h':'Perfil','a.sub':'Uma engenheira que transforma problemas em soluções otimizadas e de baixo custo.',
