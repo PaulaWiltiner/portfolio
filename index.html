@@ -391,6 +391,7 @@
         <article class="card" data-tags="cloud"><span class="flag">Architecture</span><h3>Serverless &amp; event-driven design</h3><p data-i18n="w.c5">End-to-end <b>AWS</b> serverless / event-driven architectures and cross-cloud integration (REST APIs exposed as MCP servers). Maintenance-first decisions — a single normalization layer to absorb a contract change instead of scattered fixes. Documented and handed over.</p><div class="tags"><span class="tag">Serverless</span><span class="tag">Event-driven</span><span class="tag">Cross-cloud</span></div></article>
         <article class="card" data-tags="product cloud"><span class="flag">Platform</span><h3>Platform migration &amp; UX</h3><p data-i18n="w.c6">Migrated an internal operations product to the company's next-generation platform. UI design and prototyping, process mapping, and per-country dry runs (Colombia, Chile, Brazil) before go-live.</p><div class="tags"><span class="tag">Vue / Pinia</span><span class="tag">UX / Mockups</span><span class="tag">Migration</span></div></article>
         <article class="card" data-tags="cloud"><span class="flag">Security</span><h3>Identity &amp; Access Management</h3><p data-i18n="w.c7">Designed and implemented <b>Identity &amp; Access Management (IAM)</b> with <b>Auth0</b> — role-based permissions (RBAC), custom Auth0 SDKs/packages and Actions — to control access across internal tools.</p><div class="tags"><span class="tag a">IAM</span><span class="tag a">Auth0</span><span class="tag">RBAC</span></div></article>
+        <article class="card" data-tags="cloud"><span class="flag">Frontend · Reliability</span><h3>Silent session renewal</h3><p data-i18n="w.c8">Sole author of a platform's silent token-refresh system (Vue/Nuxt) — coordinating renewal across browser tabs via <b>BroadcastChannel</b> and the <b>Web Locks API</b> (leader election), and across concurrent server requests via a leader/follower locking pattern, integrated with <b>Auth0</b> refresh token rotation and clear transient-vs-definitive failure handling.</p><div class="tags"><span class="tag a">Auth0</span><span class="tag">Web Locks API</span><span class="tag">BroadcastChannel</span></div></article>
       </div>
     </section>
 
@@ -657,6 +658,7 @@
       <li>AI-driven automation of operational workflows</li>
       <li>Observability — New Relic, CloudWatch, alerts &amp; runbooks</li>
       <li>Identity &amp; Access Management — Auth0, RBAC, custom SDKs/packages</li>
+      <li>Session management — silent token refresh, cross-tab coordination (BroadcastChannel, Web Locks API)</li>
       <li>Front-end — Vue.js, Pinia, TypeScript, design systems</li>
       <li>Cross-cloud &amp; Microsoft 365 — Azure APIM, Entra ID, SharePoint, Teams</li>
     </ul>
@@ -732,6 +734,7 @@
       <li>Automação de fluxos operacionais dirigida por IA</li>
       <li>Observabilidade — New Relic, CloudWatch, alertas &amp; runbooks</li>
       <li>Identity &amp; Access Management — Auth0, RBAC, SDKs/pacotes próprios</li>
+      <li>Gestão de sessão — renovação silenciosa de token, coordenação entre abas (BroadcastChannel, Web Locks API)</li>
       <li>Front-end — Vue.js, Pinia, TypeScript, design systems</li>
       <li>Cross-cloud &amp; Microsoft 365 — Azure APIM, Entra ID, SharePoint, Teams</li>
     </ul>
@@ -823,6 +826,7 @@
     'w.c5':'Arquiteturas <b>AWS</b> serverless / event-driven de ponta a ponta e integração cross-cloud (REST APIs expostas como servidores MCP). Decisões orientadas à manutenção — uma camada única de normalização para absorver mudança de contrato em vez de ajustes espalhados. Documentado e repassado.',
     'w.c6':'Migração de um produto interno de operações para a nova geração da plataforma da empresa. Design e prototipação de UI, mapeamento de processos e dry runs por país (Colômbia, Chile, Brasil) antes do go-live.',
     'w.c7':'Desenhei e implementei <b>Identity &amp; Access Management (IAM)</b> com <b>Auth0</b> — permissões baseadas em papéis (RBAC), SDKs/pacotes próprios do Auth0 e Actions — para controlar acesso entre ferramentas internas.',
+    'w.c8':'Autora exclusiva do sistema de renovação silenciosa de token (Vue/Nuxt) de uma plataforma — coordenando a renovação entre abas do navegador via <b>BroadcastChannel</b> e <b>Web Locks API</b> (eleição de líder), e entre requisições concorrentes no servidor via padrão líder/seguidor, integrado à rotação de refresh token do <b>Auth0</b> e com tratamento claro de falhas transitórias vs. definitivas.',
     's.h':'Produtos & projetos','s.sub':'Produtos de clientes construídos de ponta a ponta com a BuildLab — e experimentos open-source.',
     'b.ant':'Uma <b>plataforma de inteligência política com IA</b> em tempo real — um "war room digital" para campanhas. Multi-tenant, RAG sobre o conhecimento da campanha (pgvector), copiloto de IA com generative UI, monitoramento ao vivo (transcrição de rádio, sentimento em redes), scoring de ameaça de adversários e gestão de crise — com human-in-the-loop nas ações sensíveis.',
     'b.cris':'Um <b>estúdio de geração e edição de imagens com IA</b> — descreva ou anote uma referência, gere variações com o Google Gemini, organize biblioteca e histórico, e entregue os resultados ao cliente por e-mail.',
